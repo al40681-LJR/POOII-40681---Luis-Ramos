@@ -1,0 +1,77 @@
+﻿@page
+@model IndexModel
+
+@{
+    // --------------------------------------------------
+    // CONFIGURACIÓN DE LA PÁGINA
+    // --------------------------------------------------
+
+    ViewData["Title"] = "Mi Tarjeta";
+
+
+    // --------------------------------------------------
+    // VARIABLES EN C#
+    // --------------------------------------------------
+
+    string nombreAlumno = "Luis Jaime Ramos Garcia";
+    string matricula = "40681";
+    string carrera = "Ingeniero en TI Desarrollo de Software";
+    string paginaWeb = "https://www.linkedin.com/in/luisjaimeramos/";
+}
+
+
+<!-- ================================================== -->
+<!-- CONTENEDOR PRINCIPAL DE LA PÁGINA                  -->
+<!-- ================================================== -->
+
+<div style="display: flex; justify-content: center; align-items: center; min-height: 80vh; ">
+
+
+    <!-- ================================================== -->
+    <!-- TARJETA DEL ALUMNO                                 -->
+    <!-- ================================================== -->
+
+    <div style="
+        width: 400px;
+        padding: 25px;
+        border: 1px solid #cccccc;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+        ">
+
+        
+
+        <!-- ================================================== -->
+        <!-- IMAGEN DE PERFIL                                   -->
+        <!-- La imagen se encuentra en wwwroot/images           -->
+        <!-- ================================================== -->
+
+        <img src="~/images/ljrphoto.jpeg"
+             alt="Foto de perfil"
+             style="display: block; margin-left: auto; margin-right: auto; width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;" />
+
+     <!-- TÍTULO DE LA TARJETA -->
+        <h2 style="text-align: center;">
+            Datos del Alumno
+        </h2>
+        <hr />
+        <p>
+            <strong>Nombre:</strong>
+            @nombreAlumno
+        </p>
+        <p>
+            <strong>Matrícula:</strong>
+            @matricula
+        </p>
+        <p>
+            <strong>Carrera:</strong>
+            @carrera
+        </p>
+                <p>
+            <strong>Perfil Web:</strong>
+            @paginaWeb
+        </p>
+    </div>
+
+</div>
