@@ -24,21 +24,14 @@
 <!-- CONTENEDOR PRINCIPAL DE LA PÁGINA                  -->
 <!-- ================================================== -->
 
-<div style="display: flex; justify-content: center; align-items: center; min-height: 80vh; ">
+<div style="display: flex; justify-content: center; align-items: center; min-height: 80vh; background-color: grey;">
 
 
     <!-- ================================================== -->
     <!-- TARJETA DEL ALUMNO                                 -->
     <!-- ================================================== -->
 
-    <div style="
-        width: 400px;
-        padding: 25px;
-        border: 1px solid #cccccc;
-        border-radius: 10px;
-        background-color: white;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-        ">
+    <div style="width: 400px; padding: 25px; border: 1px solid #cccccc; border-radius: 10px; background-color: white; box-shadow: 0px 4px 10px rgba(0,0,0,0.15); ">
 
         
 
@@ -57,20 +50,17 @@
         </h2>
         <hr />
         <p>
-            <strong>Nombre:</strong>
-            @nombreAlumno
-        </p>
-        <p>
-            <strong>Matrícula:</strong>
-            @matricula
-        </p>
-        <p>
-            <strong>Carrera:</strong>
-            @carrera
-        </p>
-                <p>
+            <strong>Nombre:</strong> @nombreAlumno <br>
+     
+            <strong>Matrícula:</strong> @matricula <br>
+       
+            <strong>Carrera:</strong> @carrera <br>
+        <!-- Hipervínculo a una página externa -->
+
             <strong>Perfil Web:</strong>
-            @paginaWeb
+            <a href="@paginaWeb" target="_blank" class="boton-enlace">
+            Ver perfil web
+          
         </p>
     </div>
 
