@@ -1,7 +1,138 @@
 ﻿@page
 @model CalculadoraModel
-@{
-     
-    ViewData["Title"] = "Calculadora";
 
+@{
+    ViewData["Title"] = "Calculadora";
 }
+
+<!-- ================================================== -->
+<!-- CONTENEDOR PRINCIPAL                               -->
+<!-- ================================================== -->
+
+<div style="display: flex; justify-content: center; align-items: center; min-height: 80vh;">
+
+    <!-- ================================================== -->
+    <!-- CONTENEDOR DE LA CALCULADORA                       -->
+    <!-- ================================================== -->
+
+    <div style="width: 400px; padding: 30px; border: 1px solid #cccccc; border-radius: 10px; background-color: white; box-shadow: 0px 4px 10px rgba(0,0,0,0.15); ">
+
+        <!-- TÍTULO -->
+
+        <h2 style="text-align: center;">
+            Calculadora
+        </h2>
+
+        <hr />
+
+        <!-- ================================================== -->
+        <!-- FORMULARIO                                         -->
+        <!-- method POST envía los datos al servidor            -->
+        <!-- ================================================== -->
+
+        <form method="post">
+
+            <!-- PRIMER NÚMERO -->
+
+            <div style="margin-bottom: 15px;">
+
+                <label>
+                    <strong>Primer número:</strong>
+                </label>
+
+                <input type="number" step="any" asp-for="Numero1" style=" width: 100%; padding: 10px; margin-top: 5px;" />
+
+            </div>
+
+
+            <!-- SEGUNDO NÚMERO -->
+
+            <div style="margin-bottom: 20px;">
+
+                <label>
+                    <strong>Segundo número:</strong>
+                </label>
+
+                <input type="number"
+                       step="any"
+                       asp-for="Numero2"
+                       style="
+                            width: 100%;
+                            padding: 10px;
+                            margin-top: 5px;
+                       " />
+
+            </div>
+
+
+            <!-- ================================================== -->
+            <!-- BOTONES DE OPERACIONES                             -->
+            <!-- ================================================== -->
+
+            <div style=" display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+
+                <!-- SUMA -->
+
+                <button type="submit" name="operacion" value="sumar" class="boton-operacion boton-sumar"> + </button>
+
+                <!-- RESTA -->
+
+                <button type="submit" name="operacion" value="restar" class="boton-operacion boton-restar"> - </button>
+
+                <!-- MULTIPLICACIÓN -->
+
+                <button type="submit" name="operacion" value="multiplicar" class="boton-operacion boton-multiplicar"> × </button>
+
+                <!-- DIVISIÓN -->
+
+                <button type="submit" name="operacion" value="dividir" class="boton-operacion boton-dividir"> ÷ </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- ================================================== -->
+        <!-- RESULTADO                                          -->
+        <!-- ================================================== -->
+
+        @if (Model.Resultado != null)
+        {
+            <div style="
+                margin-top: 25px;
+                padding: 15px;
+                background-color: #f2f2f2;
+                border-radius: 8px;
+                text-align: center;
+            ">
+
+                <strong>Resultado:</strong>
+
+                <h3>
+                    @Model.Resultado
+                </h3>
+
+            </div>
+        }
+
+
+        <!-- ================================================== -->
+        <!-- MENSAJE DE ERROR                                   -->
+        <!-- ================================================== -->
+
+        @if (!string.IsNullOrEmpty(Model.MensajeError))
+        {
+            <p style="
+                color: red;
+                text-align: center;
+                margin-top: 15px;
+            ">
+
+                @Model.MensajeError
+
+            </p>
+        }
+
+    </div>
+
+</div>

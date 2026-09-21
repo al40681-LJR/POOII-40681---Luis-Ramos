@@ -17,6 +17,13 @@
     string matricula = "40681";
     string carrera = "Ingeniero en TI Desarrollo de Software";
     string paginaWeb = "https://www.linkedin.com/in/luisjaimeramos/";
+
+     // Texto para la sección "Acerca de mí"
+    string acercaDeMi = "Soy estudiante de Ingeniería en TI con interés en el desarrollo de software, "
+                      + "la programación y el aprendizaje de nuevas tecnologías,"
+                      + " estoy fortaleciendo mis conocimientos en ASP.NET Core, C# y desarrollo web."
+                      + " Actualmente fungiendo como Subdirector de Soporte de Aplicaciones en una empresa remesedora internacional";
+
 }
 
 
@@ -55,13 +62,16 @@
             <strong>Matrícula:</strong> @matricula <br>
        
             <strong>Carrera:</strong> @carrera <br>
+            <strong>Acerca de mí:</strong> @acercaDeMi <br>
+          
         <!-- Hipervínculo a una página externa -->
 
             <strong>Perfil Web:</strong>
-            <a href="@paginaWeb" target="_blank" class="boton-enlace">
+            <a href="@paginaWeb"  target="_blank" class="botonenlace">
             Ver perfil web
+            </a>
           
-        </p>
+        </p><br>
     </div>
 
 </div>
