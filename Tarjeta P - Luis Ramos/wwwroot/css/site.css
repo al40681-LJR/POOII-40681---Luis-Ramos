@@ -73,3 +73,13 @@ body {
 .boton-dividir {
     background-color: #0d6efd;
 }
+.boton-imc {
+    padding: 10px 20px;
+    background-color: #198754;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}

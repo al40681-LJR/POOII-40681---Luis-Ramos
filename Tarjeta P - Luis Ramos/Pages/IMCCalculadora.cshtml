@@ -1,0 +1,134 @@
+﻿@page
+@model IMCModel
+
+@{
+    ViewData["Title"] = "Calculadora IMC";
+}
+<!-- ================================================== -->
+<!-- CONTENEDOR PRINCIPAL                               -->
+<!-- ================================================== -->
+
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+">
+
+    <!-- ================================================== -->
+    <!-- TARJETA CALCULADORA IMC                            -->
+    <!-- ================================================== -->
+
+    <div style="
+        width: 400px;
+        padding: 30px;
+        border: 1px solid #cccccc;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    ">
+
+        <h2 style="text-align:center;">
+            Calculadora de IMC
+        </h2>
+
+        <hr />
+
+
+        <!-- ================================================== -->
+        <!-- FORMULARIO                                         -->
+        <!-- ================================================== -->
+
+        <form method="post">
+
+
+            <!-- PESO -->
+
+            <div style="margin-bottom: 15px;">
+
+                <label>
+                    <strong>Peso (kg):</strong>
+                </label>
+
+                <input type="number" step="any" asp-for="Peso" placeholder="Ejemplo: 65" style="width: 100%; padding: 10px; margin-top: 5px;" />
+
+            </div>
+
+
+            <!-- ESTATURA -->
+
+            <div style="margin-bottom: 20px;">
+
+                <label>
+                    <strong>Estatura (metros):</strong>
+                </label>
+
+                <input type="number" step="any" asp-for="Estatura" placeholder="Ejemplo: 1.75" style="width: 100%; padding: 10px; margin-top: 5px;" />
+
+            </div>
+
+
+            <!-- BOTÓN CALCULAR -->
+
+            <div style="text-align:center;">
+
+                <button type="submit" class="boton-imc">
+
+                    Calcular IMC
+
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- ================================================== -->
+        <!-- MOSTRAR RESULTADO                                  -->
+        <!-- ================================================== -->
+
+        @if (Model.ResultadoIMC != null)
+        {
+            <div style="
+                margin-top: 25px;
+                padding: 15px;
+                background-color: #f2f2f2;
+                border-radius: 8px;
+                text-align: center;
+            ">
+
+                <p>
+                    <strong>Tu IMC es:</strong>
+                </p>
+
+                <h2>
+                    @Model.ResultadoIMC.Value.ToString("0.00")
+                </h2>
+
+                <p>
+                    Clasificación:
+                    <strong>@Model.Clasificacion</strong>
+                </p>
+
+            </div>
+        }
+
+
+        <!-- ================================================== -->
+        <!-- MENSAJE DE ERROR                                   -->
+        <!-- ================================================== -->
+
+        @if (!string.IsNullOrEmpty(Model.MensajeError))
+        {
+            <p style="
+                color: red;
+                text-align: center;
+                margin-top: 15px;
+            ">
+                @Model.MensajeError
+            </p>
+        }
+
+    </div>
+
+</div>
